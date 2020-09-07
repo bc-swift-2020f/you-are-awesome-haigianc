@@ -15,10 +15,7 @@ class ViewController: UIViewController {
     
     var imageNumber = 0
     
-    let messages = ["You Are Awesome",
-                           "You Are Great!",
-                           "You Are Da Bomb!",
-                           "You Are A Legend!"]
+    
     var count = 0
     
     
@@ -28,22 +25,30 @@ class ViewController: UIViewController {
     }
 
     @IBAction func messageButtonPressed(_ sender: UIButton) {
-        print(imageNumber)
-        //let imageName = "image" + String(imageNumber)
-        let imageName = "image\(imageNumber)"
-        imageView.image = UIImage(named: imageName)
-        imageNumber = imageNumber + 1
-        if(imageNumber == 10){
-            imageNumber = 0
-        }
-        
-        if(count < messages.count){
-            messageLabel.text = messages[count]
-            count += 1
-            if(count == messages.count){
-                count = 0
-            }
-        }
+        let messages = ["You Are Awesome",
+                        "You Are Great!",
+                        "You Are Da Bomb!",
+                        "You Are A Legend!",
+                        "When the Genius Bar needs help, they call you!"]
+       imageView.image = UIImage(named: "image\(Int.random(in: 0...9))") //9 is the number of images we have
+       messageLabel.text = messages[Int.random(in: 0...messages.count-1)]
+    
+        //        print(imageNumber)
+        //        //let imageName = "image" + String(imageNumber)
+        //        let imageName = "image\(imageNumber)"
+        //        imageView.image = UIImage(named: imageName)
+        //        imageNumber = imageNumber + 1
+        //        if(imageNumber == 10){
+        //            imageNumber = 0
+        //        }
+        //
+        //        if(count < messages.count){
+        //            messageLabel.text = messages[count]
+        //            count += 1
+        //            if(count == messages.count){
+        //                count = 0
+        //            }
+        //        }
         
         
         //        let awesomeMessage = "You Are Awesome!"
